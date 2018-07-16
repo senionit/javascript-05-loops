@@ -17,7 +17,24 @@
 //    isVowel("Y");
 //    //=> false
 //
-var isVowel = function () {
+var isVowel = function ( aChar ) {
+
+	if ( typeof( aChar ) != "string" ) {
+		return false;
+	}
+
+	var MyChar = aChar.toUpperCase();
+
+	switch( MyChar ) {
+		case "A":
+		case "E":
+		case "I":
+		case "O":
+		case "U":
+			return true;
+		default:
+			return false;
+	}
 };
 
 
@@ -39,7 +56,27 @@ var isVowel = function () {
 //    isLowerCaseLetter(true);
 //    //=> false
 //
-var isLowerCaseLetter = function () {
+var isLowerCaseLetter = function ( aChar ) {
+	
+	// check type
+	if ( typeof( aChar ) != "string" ) {
+		return false;
+	}
+
+	// strings with not a single letter are also false
+	if ( aChar.length > 1 ) {
+		return false;
+	}
+
+	var MyChar = aChar.toLowerCase();
+
+	if ( MyChar == aChar ) {
+		return true;
+	}
+	else {
+		console.log( aChar);
+		return false;
+	}
 };
 
 
